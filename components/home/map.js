@@ -2,19 +2,20 @@ import React, {Component} from "react";
 import {StyleSheet, View} from 'react-native';
 import Constants from 'expo-constants';
 import MapView from "react-native-map-clustering";
-import {Marker} from "react-native-maps";
+import CustomMarker from "./CustomMarker";
 import Papa from "papaparse"
+import {Marker} from "react-native-maps";
 
 
 const INITIAL_REGION = {
+    // Roughly Estonia
     latitude: 59.43,
     longitude: 24.75,
     latitudeDelta: 8.5,
     longitudeDelta: 8.5
 };
 
-const DATA_URL = 'https://opendata.smit.ee/ppa/csv/vara_1.csv';
-const COORDINATE_REVERSE_URL = 'http://www.maaamet.ee/rr/geo-lest/url/?xy=';
+const DATA_URL = 'https://opendata.smit.ee/ppa/csv/vara_1.csv'; //https://opendata.riik.ee/andmehulgad/varavastased-syyteod/
 
 
 class Map extends Component {
@@ -23,35 +24,59 @@ class Map extends Component {
 
         this.state = {
             data: null,
+            dataLoaded: false,
+            loading: true
 
-        }
+        };
 
-        this.fetchData = this.fetchData.bind(this)
-    }
+        this.fetchData = this.fetchData.bind(this);
+        this.createMarker = this.createMarker.bind(this);
+        this.generateMarkers = this.generateMarkers.bind(this);
 
-    createMarker() {
-        return <Marker/>
     }
 
     componentDidMount() {
         this.fetchData();
+        this.setState({loading: false})
     }
 
+    componentWillUnmount() {
+        this.setState({loading: true})
+    }
+
+
+    generateMarkers() {
+        // Bulk marker generation
+        if (this.state.dataLoaded) {
+            const dataset = this.state.data;
+            return dataset.map((data) => this.createMarker(data))
+        }
+    }
+
+
+    createMarker(data) {
+        // Single marker generation
+        return <CustomMarker data={data} key={data[0] + data[1]}/>
+    }
+
+
     fetchData() {
+        // Consume API with CSV format and convert into JSON
         const parseConfig = {
             worker: true,
             stream: false,
             download: true,
-            preview: 10,
+            preview: 200,
             complete: (result) => {
-                this.setState({data: result})
+                this.setState({data: result.data, dataLoaded: true});
             },
-        }
+        };
         if (this.state.data === null) {
             Papa.parse(
                 DATA_URL, parseConfig
             )
         }
+
     }
 
 
@@ -60,14 +85,8 @@ class Map extends Component {
         return (
             <View styles={styles.container}>
                 <MapView initialRegion={INITIAL_REGION} style={{alignSelf: 'stretch', height: '100%'}}>
-                    <Marker coordinate={{latitude: 52.0, longitude: 18.2}}/>
-                    <Marker coordinate={{latitude: 52.4, longitude: 18.7}}/>
-                    <Marker coordinate={{latitude: 52.1, longitude: 18.4}}/>
-                    <Marker coordinate={{latitude: 52.6, longitude: 18.3}}/>
-                    <Marker coordinate={{latitude: 51.6, longitude: 18.0}}/>
-                    <Marker coordinate={{latitude: 53.1, longitude: 18.8}}/>
-                    <Marker coordinate={{latitude: 52.9, longitude: 19.4}}/>
-                    <Marker coordinate={{latitude: 52.2, longitude: 21}}/>
+                    {this.generateMarkers()}
+
                 </MapView>
             </View>
         );
