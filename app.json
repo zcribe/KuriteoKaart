@@ -5,15 +5,12 @@
     "privacy": "public",
     "sdkVersion": "36.0.0",
     "platforms": [
-      "ios",
-      "android",
-      "web"
+      "android"
     ],
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "version": "0.0.1",
+    "icon": "./assets/icon2.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/icon2.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -25,6 +22,18 @@
     ],
     "ios": {
       "supportsTablet": true
+    },
+    "android": {
+      "versionCode": 1,
+      "config": {
+        "googleMobileAdsAppId": "ca-app-pub-6870019974253956~2352818487"
+      },
+      "package": "expo.erlend. conkuriteokaart",
+      "permissions": []
+    },
+    "androidStatusBar": {
+      "backgroundColor": "#1A2640",
+      "barStyle": "light-content"
     }
   }
 }

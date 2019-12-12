@@ -66,7 +66,7 @@ class Map extends Component {
             worker: true,
             stream: false,
             download: true,
-            preview: 200,
+            preview: 100,
             complete: (result) => {
                 this.setState({data: result.data, dataLoaded: true});
             },
@@ -86,7 +86,6 @@ class Map extends Component {
             <View styles={styles.container}>
                 <MapView initialRegion={INITIAL_REGION} style={{alignSelf: 'stretch', height: '100%'}}>
                     {this.generateMarkers()}
-
                 </MapView>
             </View>
         );

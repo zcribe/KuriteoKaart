@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-import {Marker} from "react-native-maps";
+import {Text, StyleSheet} from "react-native";
+import {Callout, Marker} from "react-native-maps";
+import Constants from "expo-constants";
 
 const COORDINATE_REVERSE_URL = 'http://www.maaamet.ee/rr/geo-lest/url/?xy='; // Usage link + x,y
 
@@ -38,7 +40,13 @@ class CustomMarker extends Component {
             .then((response) => response.text())
             .then((coordinatesMixed) => {
                 let coordinatesSplit = coordinatesMixed.split(',');
-                this.setState({coordinateLat:parseFloat(coordinatesSplit[0]), coordinateLong:parseFloat(coordinatesSplit[1])})
+
+                if (!isNaN(parseFloat(coordinatesSplit[0]))) {
+                    this.setState({
+                        coordinateLat: parseFloat(coordinatesSplit[0]),
+                        coordinateLong: parseFloat(coordinatesSplit[1])
+                    })
+                }
             })
     }
 
@@ -46,13 +54,32 @@ class CustomMarker extends Component {
     render() {
         return (
             <Marker
-                coordinate={{latitude: this.state.coordinateLat, longitude: this.state.coordinateLong}} key={this.props.data[0]}
-                description={`Kuupäev: ${this.props.data[1]} Aeg: ${this.props.data[2]} Koht: ${this.props.data[17]}`}
-                title={this.props.data[6]}
-            />
+                coordinate={{latitude: this.state.coordinateLat, longitude: this.state.coordinateLong}}
+                key={this.props.data[0]}
+            >
+                <Callout>
+                    <Text style={styles.heading}>{this.props.data[6]}</Text>
+                    <Text style={styles.law}>{this.props.data[10]} {this.props.data[11]} {this.props.data[13]}</Text>
+                    <Text>{this.props.data[1]} {this.props.data[2]}</Text>
+                    <Text>{this.props.data[19]}, {this.props.data[20]}</Text>
+                    <Text>{this.props.data[17]}</Text>
+
+                </Callout>
+            </Marker>
 
         );
     }
 }
+
+const styles = StyleSheet.create({
+        heading: {
+            fontWeight: '700',
+            fontSize: 20
+        },
+        law: {
+            fontWeight: '100',
+            fontSize: 8
+        }
+    });
 
 export default CustomMarker;
