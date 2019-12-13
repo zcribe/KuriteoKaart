@@ -57,12 +57,12 @@ class CustomMarker extends Component {
                 coordinate={{latitude: this.state.coordinateLat, longitude: this.state.coordinateLong}}
                 key={this.props.data[0]}
             >
-                <Callout>
+                <Callout style={styles.callout} tooltip>
                     <Text style={styles.heading}>{this.props.data[6]}</Text>
                     <Text style={styles.law}>{this.props.data[10]} {this.props.data[11]} {this.props.data[13]}</Text>
-                    <Text>{this.props.data[1]} {this.props.data[2]}</Text>
-                    <Text>{this.props.data[19]}, {this.props.data[20]}</Text>
-                    <Text>{this.props.data[17]}</Text>
+                    <Text style={styles.textItem}>{this.props.data[1]} {this.props.data[2]}</Text>
+                    <Text style={styles.textItem}>{this.props.data[19]}, {this.props.data[20]}</Text>
+                    <Text style={styles.textItem}>{this.props.data[17]}</Text>
 
                 </Callout>
             </Marker>
@@ -74,11 +74,20 @@ class CustomMarker extends Component {
 const styles = StyleSheet.create({
         heading: {
             fontWeight: '700',
-            fontSize: 20
+            fontSize: 20,
+            color:'#fff'
         },
         law: {
             fontWeight: '100',
-            fontSize: 8
+            fontSize: 8,
+            color: '#ededff'
+        },
+        callout:{
+            backgroundColor: '#667eea',
+            padding: 10,
+        },
+        textItem:{
+            color: '#fff'
         }
     });
 

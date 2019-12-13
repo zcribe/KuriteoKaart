@@ -5,7 +5,8 @@
     "privacy": "public",
     "sdkVersion": "36.0.0",
     "platforms": [
-      "android"
+      "android",
+      "ios"
     ],
     "version": "0.0.1",
     "icon": "./assets/icon2.png",
@@ -28,7 +29,7 @@
       "config": {
         "googleMobileAdsAppId": "ca-app-pub-6870019974253956~2352818487"
       },
-      "package": "expo.erlend. conkuriteokaart",
+      "package": "expo.erlend.kuriteokaart",
       "permissions": []
     },
     "androidStatusBar": {
