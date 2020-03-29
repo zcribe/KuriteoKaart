@@ -5456,10 +5456,10 @@ react-native-cluster-map@1.0.3:
     lodash.isequal "4.5.0"
     supercluster "6.0.0"
 
-react-native-map-clustering@3.0.6:
-  version "3.0.6"
-  resolved "https://registry.yarnpkg.com/react-native-map-clustering/-/react-native-map-clustering-3.0.6.tgz#f4dec01a9c891b12ca142b76fdf1134aaa9d0674"
-  integrity sha512-Gmm9e6+aBXXrduit5OixQTkq3YdoXtuII1+q1rdDDiNnBgjyUuNW1jpuXLdXHeA0HvKqyj0Dim501z6hzdaP4A==
+react-native-map-clustering@3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/react-native-map-clustering/-/react-native-map-clustering-3.1.2.tgz#87683fa57c64ee4c0f92defb165733439510478e"
+  integrity sha512-jC647iVfSKQZBjPz84ftjFw9L6yKTbftyp/9g8B06i77JaBluYk0j+3FG/a5bJndS3iq4x3C1Crbebk1OIADpA==
   dependencies:
     "@mapbox/geo-viewport" "^0.4.0"
     supercluster "^6.0.2"
