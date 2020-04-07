@@ -5439,10 +5439,10 @@ react-is@^16.8.1, react-is@^16.8.4:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.12.0.tgz#2cc0fe0fba742d97fd527c42a13bec4eeb06241c"
   integrity sha512-rPCkf/mWBtKc97aLL9/txD8DZdemK0vkA3JMLShjlJB3Pj3s+lpf1KaBzMfQrAmhMQB0n1cU/SUGgKKBCe837Q==
 
-react-native-cluster-map@1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/react-native-cluster-map/-/react-native-cluster-map-1.0.3.tgz#98be75961b0a8dd2755200b973e52233bc3e8083"
-  integrity sha512-5ZpT/mwf/yvzPZPaOYAz2RZMcyUXbiDqekWmSOJ0V7Dm1MypttNm5pTirvTmYeb4VJFeYK8WPBZGNfl6YE4LaQ==
+react-native-cluster-map@1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/react-native-cluster-map/-/react-native-cluster-map-1.0.4.tgz#09a5fceeef0e7f89f2e3512f04a7fc4ac6bdb92d"
+  integrity sha512-qw4tgCs/umEW8yYQtq3FUKOYjFV+iuCRSAFxLiShoXiWaHLEWtmwpqS0R7AKEmvqwxgApguva3/SJviX2oxxug==
   dependencies:
     "@mapbox/geo-viewport" "0.4.0"
     "@types/jest" "^24.0.18"
