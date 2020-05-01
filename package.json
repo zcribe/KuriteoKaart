@@ -19,7 +19,7 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
-    "react-native-cluster-map": "1.0.4",
+    "react-native-cluster-map": "1.0.5",
     "react-native-map-clustering": "3.1.2",
     "react-native-maps": "0.27.1",
     "react-native-web": "0.12.2",
