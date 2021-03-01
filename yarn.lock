@@ -1056,10 +1056,17 @@
     "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^13.0.0"
 
-"@mapbox/geo-viewport@0.4.0", "@mapbox/geo-viewport@^0.4.0":
+"@mapbox/geo-viewport@0.4.0":
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/@mapbox/geo-viewport/-/geo-viewport-0.4.0.tgz#0a8dc5812d3be12c778d6545b2f3f4dec9c633da"
   integrity sha512-5OAXoP8C96Co3UDIzFliSzrK5njb9oG2H/RTMaZUW1swxIZlj3n3A5ccep5XAEIhTWxBLg/Cz48D3rUbAdXwHQ==
+  dependencies:
+    "@mapbox/sphericalmercator" "~1.1.0"
+
+"@mapbox/geo-viewport@^0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@mapbox/geo-viewport/-/geo-viewport-0.4.1.tgz#a184c0b161975858a2e855a1e333e66af342964b"
+  integrity sha512-5g6eM3EOSl7+0p0VY+vHWEYjUlNzof936VKHTi/NuJVABjbYe8D2NAVJ0qt5C9Np4glUlhKFepgAgQ0OEybrjQ==
   dependencies:
     "@mapbox/sphericalmercator" "~1.1.0"
 
@@ -5431,13 +5438,13 @@ react-native-cluster-map@1.0.5:
     lodash.isequal "4.5.0"
     supercluster "6.0.0"
 
-react-native-map-clustering@3.1.2:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/react-native-map-clustering/-/react-native-map-clustering-3.1.2.tgz#87683fa57c64ee4c0f92defb165733439510478e"
-  integrity sha512-jC647iVfSKQZBjPz84ftjFw9L6yKTbftyp/9g8B06i77JaBluYk0j+3FG/a5bJndS3iq4x3C1Crbebk1OIADpA==
+react-native-map-clustering@3.4.2:
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/react-native-map-clustering/-/react-native-map-clustering-3.4.2.tgz#9ecdd489bfd7f22fc558f48c2b7a3e8a1807933f"
+  integrity sha512-7VN3ZmOG6gH2THY1VCkrklJmLVxoaY3SyQHuPlNG1CPmL/unPkyAyfDxFoZahf+UxRYIWSbLa9C3oI3Lcswi+Q==
   dependencies:
-    "@mapbox/geo-viewport" "^0.4.0"
-    supercluster "^6.0.2"
+    "@mapbox/geo-viewport" "^0.4.1"
+    supercluster "^7.1.0"
 
 react-native-maps@0.27.1:
   version "0.27.1"
@@ -6269,10 +6276,10 @@ supercluster@6.0.0:
   dependencies:
     kdbush "^3.0.0"
 
-supercluster@^6.0.2:
-  version "6.0.2"
-  resolved "https://registry.yarnpkg.com/supercluster/-/supercluster-6.0.2.tgz#aa2eaae185ef97872f388c683ec29f6991721ee3"
-  integrity sha512-aa0v2HURjBTOpbcknilcfxGDuArM8khklKSmZ/T8ZXL0BuRwb5aRw95lz+2bmWpFvCXDX/+FzqHxmg0TIaJErw==
+supercluster@^7.1.0:
+  version "7.1.2"
+  resolved "https://registry.yarnpkg.com/supercluster/-/supercluster-7.1.2.tgz#cf02a60283a0118212024f3bf02e4e63bb148e2c"
+  integrity sha512-bGA0pk3DYMjLTY1h+rbh0imi/I8k/Lg0rzdBGfyQs0Xkiix7jK2GUmH1qSD8+jq6U0Vu382QHr3+rbbiHqdKJA==
   dependencies:
     kdbush "^3.0.0"
 
