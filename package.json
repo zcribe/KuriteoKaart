@@ -22,7 +22,7 @@
     "react-native-cluster-map": "1.0.5",
     "react-native-map-clustering": "3.1.2",
     "react-native-maps": "0.27.1",
-    "react-native-web": "0.12.2",
+    "react-native-web": "0.15.0",
     "react-papaparse": "3.0.2",
     "uniqid": "5.2.0"
   },
